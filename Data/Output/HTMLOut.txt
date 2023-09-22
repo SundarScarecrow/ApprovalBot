@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:f5f5f5;
+            margin: 0;
+            padding: 0; 
+        }
+
+        .container {
+            max-width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            background: linear-gradient(to right, rgba(245, 161, 5,0.2), rgba(3, 3, 139,0.3));
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align:Centre;
+            height: 0px;
+            font-weight: bold;
+            line-height: 0px;
+            font-size: 18px;
+            font-family: Arial
+            }
+
+        
+        .logo {
+            float: left;
+            width: 30px;
+            height:30px;
+        }
+
+        /* Subheader Styles */
+        .subheader {
+            font-size: 13.5px;
+            /* font-weight: bold; */
+            margin-top: 20px;
+            font-family: Arial
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size:12 px;
+            font-family: Arial
+        }
+
+
+        .buttonsubmit{
+            background-color: rgb(182, 239, 161);
+            border: none;
+            color:black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size:12 px;
+            font-family: Arial
+            
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 0 px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 20px;
+            font-family: Arial
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo" style="height: 45px;width: 100px;padding-left: 4%;">
+            <img src="WBZlogo.png" alt="logo image">
+
+
+        </div>
+
+
+    <div style="color:black; text-align: right; padding-right: 15%;height: 50px;">
+       
+            <h1> APPROVAL BOT </h1>
+            <h3>Reminder : Your pending approvals: 4</h3>
+            
+    </div>
+    </div>
+        
+    <meta charset="UTF-8">
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding-left: 10%;padding-right: 10%; font-size: 13.5px;">
+                <div class="subheader">
+        <div style="background-color:  lightgrey  ; color: black; text-align: left; padding: 20px;font-weight: bold;">
+            1 - LeaveRequest
+        </div>  
+       <table><tr><th>Requestor</th><th>Requested_Days</th><th>Hyperlink</th></tr><tr></tr><tr></tr><tr><td>Manobala Chandrasekaran(manobala.chandrasekaran@wonderbotz.com)</td><td>09/05/2023 00:00:00 to 09/05/2023 00:00:00</td><td><button class="buttonsubmit" type="button"><a href="https://www.google.co.in">Approve/Reject</a></button></td></tr><tr><td>Navas Hamsa(navas.hamsa@wonderbotz.com)</td><td>10/11/2023 00:00:00 to 10/13/2023 00:00:00</td><td><button class="buttonsubmit" type="button"><a href="https://www.google.co.in">Approve/Reject</a></button></td></tr></table>
+        </div>          <div class="subheader">
+        <div style="background-color:  lightgrey  ; color: black; text-align: left; padding: 20px;font-weight: bold;">
+            2 - AssetRequest
+        </div>  
+       <table><tr><th>Requestor</th><th>AssetDetails</th><th>DueDate</th><th>Hyperlink</th></tr><tr></tr><tr></tr><tr><td>Manobala Chandrasekaran(manobala.chandrasekaran@wonderbotz.com)</td><td>WBZ-Lap-005 - 5CG52346P6</td><td>08/09/2023 00:00:00</td><td><button class="buttonsubmit" type="button"><a href="https://www.google.co.in">Approve/Reject</a></button></td></tr><tr><td>Navas Hamsa(navas.hamsa@wonderbotz.com)</td><td>WBZ-Lap-007 - 5CG52346P7</td><td>08/09/2023 00:00:00</td><td><button class="buttonsubmit" type="button"><a href="https://www.google.co.in">Approve/Reject</a></button></td></tr></table>
+        </div>  
+        
+ 
+            <div class="footer">
+            <div style="background-color: #333; color: #fff; text-align: center; padding: 10px;">
+        <p>
+            This email is sent on behalf of Wonderbotz, LLC.from where this email has been sent. 
+        </p>
+    </div>
+           
+    </div>
+    </div>
+    
+    
+</body>
+</html>

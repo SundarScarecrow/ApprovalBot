@@ -1,0 +1,43 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://assets-global.website-files.com/63d91742767427518d0b1fab/63f4d528e6e38563ce54e212_logo_wonderbotz.png",
+              "size": "large"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Approval Bot - Reminders",
+              "weight": "bolder",
+              "size": "large"
+            },
+			{
+              "type": "TextBlock",
+              "text": "{{countPending}} pending requests",
+              "size": "small"
+            }
+          ]
+        }
+      ]
+    },
+    {{ROWSET}}
+  ]
+}
+
+

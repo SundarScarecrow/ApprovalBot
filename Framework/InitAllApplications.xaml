@@ -1,0 +1,257 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_SqlConnectionJObject" Type="InArgument(njl:JObject)" />
+    <x:Property Name="out_JObjectTable" Type="OutArgument(x:String)" />
+    <x:Property Name="out_DistinctApproverList" Type="OutArgument(scg:List(x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,2068</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="553.6,2003.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="MasterQueryMapping" />
+      <Variable x:TypeArguments="x:Int32" Name="currentItemIndex" />
+      <Variable x:TypeArguments="x:String" Name="MasterJobjectTable" />
+      <Variable x:TypeArguments="x:String" Name="iterativeJobjectTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[MasterQueryMapping]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[in_Config("QueryMaster").ToString.Trim.Split(",")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[out_DistinctApproverList]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[currentItemIndex]" DisplayName="For Each request from Master Query Parameter" sap:VirtualizedContainerService.HintSize="510.4,1080.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[MasterQueryMapping]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,892.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="QueryIterationNumber" />
+              <Variable x:TypeArguments="x:String" Name="CurrentQueryName" />
+              <Variable x:TypeArguments="x:String" Name="CurrentConnectionMapping" />
+              <Variable x:TypeArguments="x:String" Name="CurrentColumnMapping" />
+              <Variable x:TypeArguments="sd:DataTable" Name="ResultsDT" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="Add Q&lt;n&gt; dynamically based on the nth query from MasterQuery parameter&#xD;&#xA;" DisplayName="Assign - Query #number" sap:VirtualizedContainerService.HintSize="433.6,141.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[QueryIterationNumber]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["Q"+(currentItemIndex+1).ToString+"_"]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Querying for &quot;+currentItem+&quot; &amp; iteration number : &quot;+QueryIterationNumber]" />
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="433.6,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[CurrentQueryName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[QueryIterationNumber+currentItem]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[CurrentConnectionMapping]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[QueryIterationNumber+"ConnectionMapping"]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[CurrentColumnMapping]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[QueryIterationNumber+"ColumnMapping"]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RunDBQueries.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="RunDBQueries.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SQLQuery">[in_config(CurrentQueryName).ToString]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT">[ResultsDT]</OutArgument>
+                <InArgument x:TypeArguments="njl:JObject" x:Key="in_connectionsJObject">[in_SqlConnectionJObject]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ConnectionsMapping">[in_config(CurrentConnectionMapping).ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnsMapping">[in_config(CurrentColumnMapping).ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_QueryIterationNumber">[QueryIterationNumber]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_RequestType">[currentItem]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_JobjectTable">[iterativeJobjectTable]</OutArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctApproverList">[out_DistinctApproverList]</InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MasterJobjectTable]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[MasterJobjectTable+iterativeJobjectTable+","]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_JObjectTable]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["{"+MasterJobjectTable.Substring(0,MasterJobjectTable.Length-1)+"}"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="Data\Output\JObjectTablePlainText" sap:VirtualizedContainerService.HintSize="510.4,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[out_JObjectTable]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;input initialization complete&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,12 @@
+{
+"connectionMaster":{
+	"sqlFirstHackathon":{
+		"connectionType":"SQLServer",
+		"ServerName":"sql-firsthackathon.database.windows.net",
+		"DatabaseName":"MainDB",
+		"Assets":{
+			"DBCred_AssetName":"DBCreds_sqlFirstHackathonDB"
+				}
+						}
+					}
+}
