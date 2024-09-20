@@ -1,3 +1,10 @@
+## THEME
+
+The workflow is custom-built for handling multiple approval requests from different communication lines such as email, teams, slack, etc. and consolidates into a single-stop solution for reporting convenience. 
+The users get a list of all their actions as a teams card when connected with PowerAutomate Cloud workflow which is given in Approval_BOT_2_PowerAutomate repository.
+
+
+
 ### Documentation is included in the Documentation folder ###
 
 
